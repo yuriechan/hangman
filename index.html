@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
 
+<!--
+<head>
+    <link href='design.js' rel='stylesheet' type='text/javascript'>
+</head>
+-->
+
+<head>
+    <style type='text/css'>
+        canvas {
+            border: solid;
+        }
+
+    </style>
+</head>
+
+<body>
+    <canvas></canvas>
+    <script src='canvas.js'></script>
+</body>
+<!--
 <script>
     var words = ['cat', 'frog', 'kangaroo'];
     var word = words[Math.floor(Math.random() * words.length)];
@@ -12,7 +32,6 @@
     for (var i = 0; i < word.length; i++) {
         playerArr.push('_');
     }
-
     alert('Hello, enjoy the hang man game!\nHOW TO PLAY: Pick one character by one to guess the word.\nYou start from 6 lives!');
 
     var input = "";
@@ -55,5 +74,6 @@
     }
 
 </script>
+-->
 
 </html>
