@@ -28,7 +28,7 @@ context.lineWidth = 8;
 context.strokeStyle = 'blue';
 
 context.moveTo(203, 180);
-context.lineTo(280, 190);
+context.lineTo(280, 150);
 context.moveTo(203, 180);
 context.stroke();
 
@@ -38,7 +38,7 @@ context.lineWidth = 8;
 context.strokeStyle = 'green';
 
 context.moveTo(197, 180);
-context.lineTo(120, 190);
+context.lineTo(120, 150);
 context.moveTo(197, 180);
 context.stroke();
 
@@ -48,7 +48,7 @@ context.lineWidth = 8;
 context.strokeStyle = 'yellow';
 
 context.moveTo(203, 297);
-context.lineTo(280, 310);
+context.lineTo(280, 350);
 context.moveTo(203, 297);
 context.stroke();
 
@@ -58,7 +58,7 @@ context.lineWidth = 8;
 context.strokeStyle = 'pink';
 
 context.moveTo(197, 297);
-context.lineTo(120, 307);
+context.lineTo(120, 347);
 context.moveTo(197, 297);
 context.stroke();
 
