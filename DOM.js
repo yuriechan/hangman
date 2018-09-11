@@ -1,1 +1,2 @@
-var userInput = document.getElementsByTagName('input');
+var userInput = document.getElementById('user-input').value;
+
