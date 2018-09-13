@@ -92,3 +92,4 @@ context.lineTo(30, 450);
 context.lineTo(350, 450);
 context.moveTo(30, 0);
 context.stroke();
+
