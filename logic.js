@@ -1,7 +1,5 @@
  
-init();
-function init(){
-     alert('Hello, enjoy the hang man game!\nHOW TO PLAY: Pick one character by one to guess the word.\nYou start from 6 lives!');
+  alert('Hello, enjoy the hang man game!\nHOW TO PLAY: Pick one character by one to guess the word.\nYou start from 6 lives!');
     var input = "";
     var words = ['cat', 'frog', 'kangaroo'];
     var word = words[Math.floor(Math.random() * words.length)];
@@ -12,11 +10,9 @@ function init(){
     for (var i = 0; i < word.length; i++) {
         playerArr.push('_');
     }   
-}
-   
 
-function playing(){
    
+function playing(){   
     var userInput = document.getElementById('user-input').value;
     //when playing game 
     while (remainingLetters > 0 && incorrectGuessLeft > 0) {
@@ -58,5 +54,18 @@ function result(){
         } else if (remainingLetters > 0 && incorrectGuessLeft == 0) {
             alert('You LOST! XD');
         }
-    
+}
+
+function newGame(){
+      alert('Hello, enjoy the hang man game!\nHOW TO PLAY: Pick one character by one to guess the word.\nYou start from 6 lives!');
+    var input = "";
+    var words = ['cat', 'frog', 'kangaroo'];
+    var word = words[Math.floor(Math.random() * words.length)];
+    var remainingLetters = word.length;
+    var playerArr = [];
+    var incorrectGuessLeft = 6;
+    //initialize player array
+    for (var i = 0; i < word.length; i++) {
+        playerArr.push('_');
+    } 
 }

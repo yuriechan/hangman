@@ -5,12 +5,15 @@ canvas.height = 500;
 
 
 //*** Head of hangman***//
-context.beginPath();
+function head(){
+    context.beginPath();
 context.arc(200, 100, 50, 0, Math.PI * 2, true);
 context.closePath();
 context.lineWidth = 8;
 context.strokeStyle = 'red';
 context.stroke();
+}
+
 
 //*** body of hangman***//
 context.beginPath();
