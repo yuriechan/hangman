@@ -4,39 +4,47 @@ canvas.width = 500;
 canvas.height = 500;
 
 
-//*** Head of hangman***//
+var hangManArr = [head,body,rightArm,leftArm,rightLeg,leftLeg]
+//hangManArr.push(head())
+
+//*** Head of hangman***//  
 function head(){
-    context.beginPath();
+context.beginPath();
 context.arc(200, 100, 50, 0, Math.PI * 2, true);
 context.closePath();
 context.lineWidth = 8;
 context.strokeStyle = 'red';
-context.stroke();
+context.stroke(); 
 }
 
-
 //*** body of hangman***//
+function body(){
 context.beginPath();
 context.lineWidth = 8;
 context.strokeStyle = 'purple';
-
 context.moveTo(200, 150);
 context.lineTo(200, 300);
 context.lineTo(200, 150);
-context.stroke();
+context.stroke();  
+}
+
 
 //*** right arm of hangman**//
-context.beginPath();
+function rightArm(){
+ context.beginPath();
 context.lineWidth = 8;
 context.strokeStyle = 'blue';
 
 context.moveTo(203, 180);
 context.lineTo(280, 150);
 context.moveTo(203, 180);
-context.stroke();
+context.stroke();   
+}
+
 
 //*** left arm of hangman**//
-context.beginPath();
+function leftArm(){
+  context.beginPath();
 context.lineWidth = 8;
 context.strokeStyle = 'green';
 
@@ -44,19 +52,25 @@ context.moveTo(197, 180);
 context.lineTo(120, 150);
 context.moveTo(197, 180);
 context.stroke();
+  
+}
 
 //*** right leg of hangman**//
-context.beginPath();
+function rightLeg(){
+  context.beginPath();
 context.lineWidth = 8;
 context.strokeStyle = 'yellow';
 
 context.moveTo(203, 297);
 context.lineTo(280, 350);
 context.moveTo(203, 297);
-context.stroke();
+context.stroke();  
+}
+
 
 //***left leg of hangman**//
-context.beginPath();
+function leftLeg(){
+    context.beginPath();
 context.lineWidth = 8;
 context.strokeStyle = 'pink';
 
@@ -64,6 +78,8 @@ context.moveTo(197, 297);
 context.lineTo(120, 347);
 context.moveTo(197, 297);
 context.stroke();
+
+}
 
 //*** the top part of hang**//
 context.beginPath();
@@ -95,4 +111,22 @@ context.lineTo(30, 450);
 context.lineTo(350, 450);
 context.moveTo(30, 0);
 context.stroke();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

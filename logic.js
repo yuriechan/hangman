@@ -10,7 +10,8 @@
     for (var i = 0; i < word.length; i++) {
         playerArr.push('_');
     }   
-
+ 
+  var num = 0;
    
 function playing(){   
     var userInput = document.getElementById('user-input').value;
@@ -37,15 +38,20 @@ function playing(){
             
             if (!isGuessFound) {
                 incorrectGuessLeft--;
+                hangManArr[num]();
+                num++
             }
-                        
+                       
             alert(playerArr.join(' ') + '\nLetters remaining: ' + remainingLetters + '.' + '\nYou have ' + incorrectGuessLeft + ' lives left.');
             userInput = '';
             result();
-        } 
-         document.getElementById('user-input').reset();
+        }
+            document.getElementById('user-input').reset();
+        }  
     } 
-}
+    
+    
+
 
 function result(){
       if (remainingLetters == 0 && incorrectGuessLeft > 0) {
@@ -69,3 +75,19 @@ function newGame(){
         playerArr.push('_');
     } 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
