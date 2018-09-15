@@ -1,41 +1,37 @@
-const message = 'Hello, enjoy the hang man game!\n' +
-'HOW TO PLAY: Pick one character by one to guess the word.\n' +
-'You start from 6 lives!';
 
-alert(message);
+function welcomeMessage(){
+  const message = 'Hello, enjoy the hang man game!\n' +
+  'HOW TO PLAY: Pick one character by one to guess the word.\n' +
+  'You start from 6 lives!';
+  alert(message);
+}
 
 function setAnswerWord() {
   var words = ['cat', 'frog', 'egg']; // Database kara get suru
   return words[Math.floor(Math.random() * words.length)];
 }
 
-function init(answer) {
-
-  var remainingLetters = answer.length;
-  var playerArr = [];
-  var incorrectGuessLeft = 6;
-
-  //initialize player array
+function initPlayerArr(answer) {
+  var arr = [];
   for (var i = 0; i < answer.length; i++) {
-    playerArr.push('_');
+    arr.push('_');
   }
-  return playerArr;
+  return arr;
 }
 
-playing ();
-//var num = 0;
+var word = setAnswerWord();
+var playerArr = initPlayerArr(word);
+var incorrectGuessLeft = 6;
+
+alert(arr);
+playing();
 
 function playing() {
 
-  const word = setAnswerWord();
-  //alert(word);
-
-  const playerArr = init(word);
-  //alert(playerArr);
-
-
+  var num = 0;
   var input = "";
   var userInput = document.getElementById('user-input').value;
+  var remainingLetters = word.length;
 
   //when playing game
   while (remainingLetters > 0 && incorrectGuessLeft > 0) {
@@ -83,18 +79,47 @@ function result() {
 }
 
 function newGame() {
-  alert('Hello, enjoy the hang man game!\nHOW TO PLAY: Pick one character by one to guess the word.\nYou start from 6 lives!');
-  var input = "";
-  var words = ['cat', 'frog', 'egg'];
-  var word = words[Math.floor(Math.random() * words.length)];
-  var remainingLetters = word.length;
-  var playerArr = [];
-  var incorrectGuessLeft = 6;
-  //initialize player array
-  for (var i = 0; i < word.length; i++) {
-    playerArr.push('_');
-  }
-  //document.getElementById('playButton').style.visibility = 'visible';
+
+  var canvas = document.querySelector('canvas');
+  var context = canvas.getContext('2d');
+  canvas.width = 500;
+  canvas.height = 500;
+
+  //*** the top part of hang**//
+  context.beginPath();
+  context.lineWidth = 15;
+  context.strokeStyle = 'black';
+
+  context.moveTo(200, 0);
+  context.lineTo(200, 47);
+  context.moveTo(200, 0);
+  context.stroke();
+
+  //*** top extension part of hang**//
+  context.beginPath();
+  context.lineWidth = 15;
+  context.strokeStyle = 'black';
+
+  context.moveTo(200, 0);
+  context.lineTo(30, 0);
+  context.moveTo(200, 0);
+  context.stroke();
+
+  //*** other parts of the hang**//
+  context.beginPath();
+  context.lineWidth = 15;
+  context.strokeStyle = 'black';
+
+  context.moveTo(30, 0);
+  context.lineTo(30, 450);
+  context.lineTo(350, 450);
+  context.moveTo(30, 0);
+  context.stroke();
+
+  welcomeMessage();
+  word = setAnswerWord();
+  playerArr = initPlayerArr(word);
+  incorrectGuessLeft = 6;
 }
 
 //
