@@ -1,14 +1,14 @@
+welcomeMessage();
 
-function welcomeMessage(){
+function welcomeMessage() {
   const message = 'Hello, enjoy the hang man game!\n' +
   'HOW TO PLAY: Pick one character by one to guess the word.\n' +
   'You start from 6 lives!';
   alert(message);
 }
 
-function setAnswerWord() {
-  var words = ['cat', 'frog', 'egg']; // Database kara get suru
-  return words[Math.floor(Math.random() * words.length)];
+function setAnswerWord(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 function initPlayerArr(answer) {
@@ -19,16 +19,14 @@ function initPlayerArr(answer) {
   return arr;
 }
 
-var word = setAnswerWord();
+var word = setAnswerWord(['cat', 'frog', 'egg']);
 var playerArr = initPlayerArr(word);
 var incorrectGuessLeft = 6;
+var hangManBodyParts = 0;
 
-alert(arr);
 playing();
-
 function playing() {
 
-  var num = 0;
   var input = "";
   var userInput = document.getElementById('user-input').value;
   var remainingLetters = word.length;
@@ -37,7 +35,6 @@ function playing() {
   while (remainingLetters > 0 && incorrectGuessLeft > 0) {
     input = userInput;
     if (input == "") {
-      //click cancel returns null
       alert('Please enter a character!');
       //document.getElementById('user-input').reset();
       //resetInput();
@@ -55,21 +52,24 @@ function playing() {
       }
       if (!isGuessFound) {
         incorrectGuessLeft--;
-        hangManArr[num]();
-        num++
+        hangManArr[hangManBodyParts]();
+        hangManBodyParts++;
       }
       alert(playerArr.join(' ') + '\nLetters remaining: ' + remainingLetters + '.' + '\nYou have ' + incorrectGuessLeft + ' lives left.');
       userInput = '';
-      result();
+
+
+
+
+      //result();
     }
     document.getElementById('user-input').reset();
   }
-
 }
 
 function result() {
   if (remainingLetters == 0 && incorrectGuessLeft > 0) {
-    alert('You win! ' + 'Correct word was ' + word + '. Thanks for playing lol');
+    document.getElementById('gameOverMessage').innerHTML = 'You win! ' + 'Correct word was ' + word + '. Thanks for playing lol';
     //btnHidden();
 
   } else if (remainingLetters > 0 && incorrectGuessLeft == 0) {
@@ -86,30 +86,33 @@ function newGame() {
   canvas.height = 500;
 
   //*** the top part of hang**//
-  context.beginPath();
-  context.lineWidth = 15;
-  context.strokeStyle = 'black';
+  function setDesignPalette(){
+    context.beginPath();
+    context.lineWidth = 15;
+    context.strokeStyle = 'black';
+  }
 
+  setDesignPalette();
   context.moveTo(200, 0);
   context.lineTo(200, 47);
   context.moveTo(200, 0);
   context.stroke();
 
   //*** top extension part of hang**//
-  context.beginPath();
-  context.lineWidth = 15;
-  context.strokeStyle = 'black';
-
+  // context.beginPath();
+  // context.lineWidth = 15;
+  // context.strokeStyle = 'black';
+  setDesignPalette();
   context.moveTo(200, 0);
   context.lineTo(30, 0);
   context.moveTo(200, 0);
   context.stroke();
 
   //*** other parts of the hang**//
-  context.beginPath();
-  context.lineWidth = 15;
-  context.strokeStyle = 'black';
-
+  // context.beginPath();
+  // context.lineWidth = 15;
+  // context.strokeStyle = 'black';
+  setDesignPalette();
   context.moveTo(30, 0);
   context.lineTo(30, 450);
   context.lineTo(350, 450);
@@ -117,7 +120,7 @@ function newGame() {
   context.stroke();
 
   welcomeMessage();
-  word = setAnswerWord();
+  word = setAnswerWord(["awe", "xgcg", "vgk"]);
   playerArr = initPlayerArr(word);
   incorrectGuessLeft = 6;
 }
