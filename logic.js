@@ -2,13 +2,14 @@ welcomeMessage();
 
 function welcomeMessage() {
   const message = 'Hello, enjoy the hang man game!\n' +
-  'HOW TO PLAY: Pick one character by one to guess the word.\n' +
-  'You start from 6 lives!';
+    'HOW TO PLAY: Pick one character by one to guess the word.\n' +
+    'You start from 6 lives!';
   alert(message);
 }
 
-function setAnswerWord(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+function setAnswerWord() {
+  var words = ['cat', 'frog', 'egg'];
+  return words[Math.floor(Math.random() * words.length)];
 }
 
 function initPlayerArr(answer) {
@@ -19,25 +20,23 @@ function initPlayerArr(answer) {
   return arr;
 }
 
-var word = setAnswerWord(['cat', 'frog', 'egg']);
+var word = setAnswerWord();
 var playerArr = initPlayerArr(word);
 var incorrectGuessLeft = 6;
 var hangManBodyParts = 0;
+var remainingLetters = word.length;
 
 playing();
+
 function playing() {
-
-  var input = "";
-  var userInput = document.getElementById('user-input').value;
-  var remainingLetters = word.length;
-
+  var userInput = '';
+  var input = '';
+  userInput = document.getElementById('user-input').value;
+  input = userInput;
   //when playing game
   while (remainingLetters > 0 && incorrectGuessLeft > 0) {
-    input = userInput;
     if (input == "") {
       alert('Please enter a character!');
-      //document.getElementById('user-input').reset();
-      //resetInput();
     } else {
       input = input.toLowerCase();
       var isGuessFound = false;
@@ -56,12 +55,7 @@ function playing() {
         hangManBodyParts++;
       }
       alert(playerArr.join(' ') + '\nLetters remaining: ' + remainingLetters + '.' + '\nYou have ' + incorrectGuessLeft + ' lives left.');
-      userInput = '';
-
-
-
-
-      //result();
+      result();
     }
     document.getElementById('user-input').reset();
   }
@@ -69,13 +63,17 @@ function playing() {
 
 function result() {
   if (remainingLetters == 0 && incorrectGuessLeft > 0) {
-    document.getElementById('gameOverMessage').innerHTML = 'You win! ' + 'Correct word was ' + word + '. Thanks for playing lol';
-    //btnHidden();
+    document.getElementById('gameOverMessage').textContent = 'You win! ' + 'Correct word was ' + word + '. Thanks for playing lol';
+    btnHidden();
 
   } else if (remainingLetters > 0 && incorrectGuessLeft == 0) {
-    alert('You LOST! XD');
-    //btnHidden();
+    document.getElementById('gameOverMessage').textContent = 'You LOST! XD';
+    btnHidden();
   }
+}
+
+function btnHidden(){
+     document.getElementById('playButton').style.visibility = 'hidden';
 }
 
 function newGame() {
@@ -86,7 +84,7 @@ function newGame() {
   canvas.height = 500;
 
   //*** the top part of hang**//
-  function setDesignPalette(){
+  function setDesignPalette() {
     context.beginPath();
     context.lineWidth = 15;
     context.strokeStyle = 'black';
@@ -119,16 +117,14 @@ function newGame() {
   context.moveTo(30, 0);
   context.stroke();
 
-  welcomeMessage();
-  word = setAnswerWord(["awe", "xgcg", "vgk"]);
-  playerArr = initPlayerArr(word);
-  incorrectGuessLeft = 6;
+  // welcomeMessage();
+  // word = setAnswerWord(["awe", "xgcg", "vgk"]);
+  // playerArr = initPlayerArr(word);
+  // incorrectGuessLeft = 6;
 }
 
-//
-//function btnHidden(){
-//      document.getElementById('playButton').style.visibility = 'hidden';
-//}
+
+
 
 
 //alert(playerArr + 'second');
