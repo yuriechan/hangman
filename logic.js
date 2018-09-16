@@ -20,6 +20,8 @@ function initPlayerArr(answer) {
   return arr;
 }
 
+//document.getElementById('display-input').textContent = 'hi';
+
 var word = setAnswerWord();
 var playerArr = initPlayerArr(word);
 var incorrectGuessLeft = 6;
@@ -80,33 +82,38 @@ function setDesignPalette() {
   context.beginPath();
   context.lineWidth = 15;
   context.strokeStyle = 'black';
-  context.stroke();
+
 }
 
 function newGame() {
+  context.clearRect(0,0,500,500);
 
   //*** the top part of hang**//
   setDesignPalette();
   context.moveTo(200, 0);
   context.lineTo(200, 47);
   context.moveTo(200, 0);
-
+  context.stroke();
   //*** top extension part of hang**//
   setDesignPalette();
   context.moveTo(200, 0);
   context.lineTo(30, 0);
   context.moveTo(200, 0);
-
+context.stroke();
   //*** other parts of the hang**//
   setDesignPalette();
   context.moveTo(30, 0);
   context.lineTo(30, 450);
   context.lineTo(350, 450);
   context.moveTo(30, 0);
+context.stroke();
 
-  welcomeMessage();
-  setAnswerWord();
-  initPlayerArr(word);
+welcomeMessage();
+word = setAnswerWord();
+playerArr = initPlayerArr(word);
+incorrectGuessLeft = 6;
+hangManBodyParts = 0;
+remainingLetters = word.length;
 
   document.getElementById('playButton').style.visibility = 'visible';
 }
