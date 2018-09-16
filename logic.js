@@ -27,7 +27,6 @@ var hangManBodyParts = 0;
 var remainingLetters = word.length;
 
 playing();
-
 function playing() {
   var userInput = '';
   var input = '';
@@ -76,55 +75,38 @@ function btnHidden(){
      document.getElementById('playButton').style.visibility = 'hidden';
 }
 
+
+function setDesignPalette() {
+  context.beginPath();
+  context.lineWidth = 15;
+  context.strokeStyle = 'black';
+  context.stroke();
+}
+
 function newGame() {
 
-  var canvas = document.querySelector('canvas');
-  var context = canvas.getContext('2d');
-  canvas.width = 500;
-  canvas.height = 500;
-
   //*** the top part of hang**//
-  function setDesignPalette() {
-    context.beginPath();
-    context.lineWidth = 15;
-    context.strokeStyle = 'black';
-  }
-
   setDesignPalette();
   context.moveTo(200, 0);
   context.lineTo(200, 47);
   context.moveTo(200, 0);
-  context.stroke();
 
   //*** top extension part of hang**//
-  // context.beginPath();
-  // context.lineWidth = 15;
-  // context.strokeStyle = 'black';
   setDesignPalette();
   context.moveTo(200, 0);
   context.lineTo(30, 0);
   context.moveTo(200, 0);
-  context.stroke();
 
   //*** other parts of the hang**//
-  // context.beginPath();
-  // context.lineWidth = 15;
-  // context.strokeStyle = 'black';
   setDesignPalette();
   context.moveTo(30, 0);
   context.lineTo(30, 450);
   context.lineTo(350, 450);
   context.moveTo(30, 0);
-  context.stroke();
 
-  // welcomeMessage();
-  // word = setAnswerWord(["awe", "xgcg", "vgk"]);
-  // playerArr = initPlayerArr(word);
-  // incorrectGuessLeft = 6;
+  welcomeMessage();
+  setAnswerWord();
+  initPlayerArr(word);
+
+  document.getElementById('playButton').style.visibility = 'visible';
 }
-
-
-
-
-
-//alert(playerArr + 'second');
