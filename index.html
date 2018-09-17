@@ -5,7 +5,7 @@
 <canvas></canvas>
 <script src='canvas.js'></script>
 <script src='logic.js'></script>
-<script src='stylesheet.css'></script>
+<link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
@@ -14,11 +14,11 @@ Chosen Character:<h2 id = 'display-chosen-alpha'></h2>
     <button type = 'button' onclick = 'playing()' id = 'playButton'>Guess!</button>
     <button type = 'button' onclick = 'newGame()'>Reset</button>
     <br>
-    <button class = 'alphaBtn' type = 'button' onclick = 'chooseCharA()' id = 'a'>a</button>
-    <button class = 'alphaBtn' type = 'button' onclick = 'chooseCharB()' id = 'b'>b</button>
-    <button type = 'button' onclick = 'chooseCharC()' id = 'c'>c</button>
-    <button type = 'button' onclick = 'chooseCharD()' id = 'd'>d</button>
-    <button type = 'button' onclick = 'chooseCharE()' id = 'e'>e</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar()' id = 'a'>a</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar()' id = 'b'>b</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar()' id = 'c'>c</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar()' id = 'd'>d</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar()' id = 'e'>e</button>
     <br>
     <p id = 'gameOverMessage'></p>
 </body>
