@@ -5,14 +5,20 @@
 <canvas></canvas>
 <script src='canvas.js'></script>
 <script src='logic.js'></script>
+<script src='stylesheet.css'></script>
 </head>
 
 <body>
-<h1 id='display-input'></h1>
-<br>
-Enter one character: <input type='text' maxlength = '1' id = 'user-input'>
-    <button type = 'submit' onclick = 'playing()' id = 'playButton'>Guess!</button>
-    <button type = 'submit' onclick = 'newGame()'>Reset</button>
+  <br>
+Chosen Character:<h2 id = 'display-chosen-alpha'></h2>
+    <button type = 'button' onclick = 'playing()' id = 'playButton'>Guess!</button>
+    <button type = 'button' onclick = 'newGame()'>Reset</button>
+    <br>
+    <button class = 'alphaBtn' type = 'button' onclick = 'chooseCharA()' id = 'a'>a</button>
+    <button class = 'alphaBtn' type = 'button' onclick = 'chooseCharB()' id = 'b'>b</button>
+    <button type = 'button' onclick = 'chooseCharC()' id = 'c'>c</button>
+    <button type = 'button' onclick = 'chooseCharD()' id = 'd'>d</button>
+    <button type = 'button' onclick = 'chooseCharE()' id = 'e'>e</button>
     <br>
     <p id = 'gameOverMessage'></p>
 </body>

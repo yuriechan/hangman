@@ -1,3 +1,5 @@
+
+
 welcomeMessage();
 
 function welcomeMessage() {
@@ -20,7 +22,7 @@ function initPlayerArr(answer) {
   return arr;
 }
 
-//document.getElementById('display-input').textContent = 'hi';
+
 
 var word = setAnswerWord();
 var playerArr = initPlayerArr(word);
@@ -28,17 +30,21 @@ var incorrectGuessLeft = 6;
 var hangManBodyParts = 0;
 var remainingLetters = word.length;
 
+
+
 playing();
 function playing() {
   var userInput = '';
   var input = '';
-  userInput = document.getElementById('user-input').value;
+userInput = document.getElementById('display-chosen-alpha').textContent;
+document.getElementById('a').style.backgroundColor = 'red';
+
   input = userInput;
-  //when playing game
   while (remainingLetters > 0 && incorrectGuessLeft > 0) {
     if (input == "") {
       alert('Please enter a character!');
     } else {
+      //whenProperInput();
       input = input.toLowerCase();
       var isGuessFound = false;
       for (var i = 0; i < word.length; i++) {
@@ -58,9 +64,33 @@ function playing() {
       alert(playerArr.join(' ') + '\nLetters remaining: ' + remainingLetters + '.' + '\nYou have ' + incorrectGuessLeft + ' lives left.');
       result();
     }
-    document.getElementById('user-input').reset();
+    document.getElementById('display-chosen-alpha').reset();
   }
 }
+
+function whenProperInput(){
+  input = input.toLowerCase();
+    var isGuessFound = false;
+      for (var i = 0; i < word.length; i++) {
+        if (input == word[i]) {
+          if (input !== playerArr[i]) {
+            playerArr[i] = input;
+            //document.getElementById('display-input').textContent = '';
+            remainingLetters--;
+            }
+        isGuessFound = true;
+        }
+      }
+      if (!isGuessFound) {
+      incorrectGuessLeft--;
+      hangManArr[hangManBodyParts]();
+      hangManBodyParts++;
+      }
+  alert(playerArr.join(' ') + '\nLetters remaining: ' + remainingLetters + '.' + '\nYou have ' + incorrectGuessLeft + ' lives left.');
+  result();
+}
+
+
 
 function result() {
   if (remainingLetters == 0 && incorrectGuessLeft > 0) {
@@ -99,14 +129,14 @@ function newGame() {
   context.moveTo(200, 0);
   context.lineTo(30, 0);
   context.moveTo(200, 0);
-context.stroke();
+  context.stroke();
   //*** other parts of the hang**//
   setDesignPalette();
   context.moveTo(30, 0);
   context.lineTo(30, 450);
   context.lineTo(350, 450);
   context.moveTo(30, 0);
-context.stroke();
+  context.stroke();
 
 welcomeMessage();
 word = setAnswerWord();
@@ -114,6 +144,40 @@ playerArr = initPlayerArr(word);
 incorrectGuessLeft = 6;
 hangManBodyParts = 0;
 remainingLetters = word.length;
+document.getElementById('gameOverMessage').textContent = '';
+document.getElementById('playButton').style.visibility = 'visible';
+}
 
-  document.getElementById('playButton').style.visibility = 'visible';
+
+function chooseCharA(){
+  //var alphabet = document.querySelector('.alphaBtn').id
+  var alphabet = document.getElementById('a');
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  //alphabet.style.backgroundColor = 'red';
+  displayChosenAlpha.textContent = 'a';
+}
+
+function chooseCharB(){
+  //var alphabet = document.querySelector('.alphaBtn').id
+  var alphabet = document.getElementById('b');
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'b';
+}
+
+function chooseCharC(){
+  var alphabet = document.getElementById('c');
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'c';
+}
+
+function chooseCharD(){
+  var alphabet = document.getElementById('d');
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'd';
+}
+
+function chooseCharE(){
+  var alphabet = document.getElementById('e');
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'e';
 }

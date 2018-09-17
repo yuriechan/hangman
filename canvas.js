@@ -1,3 +1,4 @@
+// set the property of canvas
 var canvas = document.querySelector('canvas');
 var context = canvas.getContext('2d');
 canvas.width = 500;
@@ -5,7 +6,6 @@ canvas.height = 500;
 
 
 var hangManArr = [head,body,rightArm,leftArm,rightLeg,leftLeg]
-//hangManArr.push(head())
 
 //*** Head of hangman***//
 function head(){
