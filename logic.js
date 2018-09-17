@@ -10,7 +10,7 @@ function welcomeMessage() {
 }
 
 function setAnswerWord() {
-  var words = ['cat', 'frog', 'egg'];
+  var words = ['cat', 'frog', 'egg']; // get words from database
   return words[Math.floor(Math.random() * words.length)];
 }
 
@@ -153,9 +153,10 @@ document.getElementById('display-chosen-alpha').textContent = '';
 
 
 function chooseChar(){
-  // var displayChosenAlpha = document.getElementById('display-chosen-alpha');
-  // var chosenAlpha = document.getElementsByClassName('.char-btn').
-alert(chosenAlpha);
+   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent
+//   var chosenAlpha = document.getElementsByClassName('.char-btn').id
+// alert(chosenAlpha);
   // var displayChosenAlpha = document.getElementById('display-chosen-alpha').textContent;
   // var idForAlpha = document.querySelector(.char)
   //alert(displayChosenAlpha.id)
@@ -165,12 +166,20 @@ alert(chosenAlpha);
 // alert($(document).ready(function(){
 // $('.char-btn').click(function(){
 // $(this).text()});});)
-
-
+// function(){
+//   var test = $('.char-btn').click(function(){$(this).text})
+// }
+//
+$('.char-btn').each(function() {
+  alert($(this).attr('id'));
+});
 
 
 }
-//
+
+
+
+
 // function chooseCharB(){
 //   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
 //   displayChosenAlpha.textContent = 'b';
