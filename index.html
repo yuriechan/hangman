@@ -5,13 +5,42 @@
 <canvas></canvas>
 <script src='canvas.js'></script>
 <script src='logic.js'></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
-<p id = 'guessed-word'></p>
-Enter one character: <input type='text' maxlength = '1' id = 'user-input'>
-    <button type = 'submit' onclick = 'playing()' id = 'playButton'>Guess!</button>
-    <button type = 'submit' onclick = 'newGame()'>Reset</button>
+  <br>
+Chosen Character:<h2 id = 'display-chosen-alpha'></h2>
+    <button type = 'button' onclick = 'playing()' id = 'playButton'>Guess!</button>
+    <button type = 'button' onclick = 'newGame()'>Reset</button>
+    <br>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharA()' id = 'a'>a</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharB()' id = 'b'>b</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharC()' id = 'c'>c</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharD()' id = 'd'>d</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharE()' id = 'e'>e</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharF()' id = 'f'>f</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharG()' id = 'g'>g</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharH()' id = 'h'>h</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharI()' id = 'i'>i</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharJ()' id = 'j'>j</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharK()' id = 'k'>k</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharL()' id = 'l'>l</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharM()' id = 'm'>m</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharN()' id = 'n'>n</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharO()' id = 'o'>o</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharP()' id = 'p'>p</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharQ()' id = 'q'>q</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharR()' id = 'r'>r</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharS()' id = 's'>s</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharT()' id = 't'>t</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharU()' id = 'u'>u</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharV()' id = 'v'>v</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharW()' id = 'w'>w</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharX()' id = 'x'>x</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharY()' id = 'y'>y</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseCharZ()' id = 'z'>z</button>
     <br>
     <p id = 'gameOverMessage'></p>
 </body>
