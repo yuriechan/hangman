@@ -8,7 +8,7 @@ function welcomeMessage() {
 }
 
 function setAnswerWord() {
-  var words = ['cat', 'frog', 'egg'];
+  var words = ['cat', 'frog', 'egg']; // get words from database
   return words[Math.floor(Math.random() * words.length)];
 }
 
@@ -27,12 +27,23 @@ var playerArr = initPlayerArr(word);
 var incorrectGuessLeft = 6;
 var hangManBodyParts = 0;
 var remainingLetters = word.length;
+var userInput = '';
+var input = '';
 
+<<<<<<< HEAD
 playing();
 function playing() {
   var userInput = '';
   var input = '';
   userInput = document.getElementById('user-input').value;
+=======
+
+function playing() {
+
+userInput = document.getElementById('display-chosen-alpha').textContent;
+document.getElementById(userInput).style.backgroundColor = 'red';
+
+>>>>>>> develop
   input = userInput;
   //when playing game
   while (remainingLetters > 0 && incorrectGuessLeft > 0) {
@@ -114,6 +125,90 @@ playerArr = initPlayerArr(word);
 incorrectGuessLeft = 6;
 hangManBodyParts = 0;
 remainingLetters = word.length;
+<<<<<<< HEAD
 
   document.getElementById('playButton').style.visibility = 'visible';
+=======
+
+//x = document.getElementById('display-chosen-alpha').textContent;
+document.getElementById('gameOverMessage').textContent = '';
+document.getElementById('playButton').style.visibility = 'visible';
+//document.getElementsByClassName('char-btn').style.backgroundColor = '';
+document.getElementById('display-chosen-alpha').textContent = '';
 }
+
+
+function chooseChar(){
+   //var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  //displayChosenAlpha.textContent =
+   //var chosenAlpha = document.getElementsByClassName('char-btn')[0].id
+ //alert(chosenAlpha);
+//alert()
+
+//alert(chosenAlpha.length);
+//getIndexNum();
+function getIndexNum(){
+  var chosenAlpha = document.getElementsByClassName('char-btn');
+  for (var i = 0; i < chosenAlpha.length; i++)
+  {
+      (function(index){
+          chosenAlpha[i].onclick = function(){
+            //alert(index);
+            return index;
+
+          }
+      })(i);
+  }
+}
+alert(getIndexNum());
+
+// var chosenAlpha = document.getElementsByClassName('char-btn')[getIndexNum()].id
+// alert(chosenAlpha);
+
+
+
+
+  // var displayChosenAlpha = document.getElementById('display-chosen-alpha').textContent;
+  // var idForAlpha = document.querySelector(.char)
+  //alert(displayChosenAlpha.id)
+  //alert(document.querySelector('.char-btn').id)
+
+//
+// alert($(document).ready(function(){
+// $('.char-btn').click(function(){
+// $(this).text()});});)
+// function(){
+//   var test = $('.char-btn').click(function(){$(this).text})
+// }
+//
+// $('.char-btn').each(function() {
+//   alert($(this).attr('id'));
+// });
+
+
+>>>>>>> develop
+}
+
+
+
+
+// function chooseCharB(){
+//   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+//   displayChosenAlpha.textContent = 'b';
+//   //alert(document.querySelector('.char-btn').id)
+// }
+//
+// function chooseCharC(){
+//   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+//   displayChosenAlpha.textContent = 'c';
+// }
+//
+// function chooseCharD(){
+//   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+//   displayChosenAlpha.textContent = 'd';
+// }
+//
+// function chooseCharE(){
+//   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+//   displayChosenAlpha.textContent = 'e';
+// }
