@@ -1,5 +1,3 @@
-
-
 welcomeMessage();
 
 function welcomeMessage() {
@@ -22,7 +20,7 @@ function initPlayerArr(answer) {
   return arr;
 }
 
-
+//document.getElementById('display-input').textContent = 'hi';
 
 var word = setAnswerWord();
 var playerArr = initPlayerArr(word);
@@ -32,6 +30,11 @@ var remainingLetters = word.length;
 var userInput = '';
 var input = '';
 
+playing();
+function playing() {
+  var userInput = '';
+  var input = '';
+  userInput = document.getElementById('user-input').value;
 
 function playing() {
 
@@ -39,11 +42,11 @@ userInput = document.getElementById('display-chosen-alpha').textContent;
 document.getElementById(userInput).style.backgroundColor = 'red';
 
   input = userInput;
+  //when playing game
   while (remainingLetters > 0 && incorrectGuessLeft > 0) {
     if (input == "") {
       alert('Please enter a character!');
     } else {
-      //whenProperInput();
       input = input.toLowerCase();
       var isGuessFound = false;
       for (var i = 0; i < word.length; i++) {
@@ -63,33 +66,9 @@ document.getElementById(userInput).style.backgroundColor = 'red';
       alert(playerArr.join(' ') + '\nLetters remaining: ' + remainingLetters + '.' + '\nYou have ' + incorrectGuessLeft + ' lives left.');
       result();
     }
-    document.getElementById('display-chosen-alpha').reset();
+    document.getElementById('user-input').reset();
   }
 }
-
-function whenProperInput(){
-  input = input.toLowerCase();
-    var isGuessFound = false;
-      for (var i = 0; i < word.length; i++) {
-        if (input == word[i]) {
-          if (input !== playerArr[i]) {
-            playerArr[i] = input;
-            //document.getElementById('display-input').textContent = '';
-            remainingLetters--;
-            }
-        isGuessFound = true;
-        }
-      }
-      if (!isGuessFound) {
-      incorrectGuessLeft--;
-      hangManArr[hangManBodyParts]();
-      hangManBodyParts++;
-      }
-  alert(playerArr.join(' ') + '\nLetters remaining: ' + remainingLetters + '.' + '\nYou have ' + incorrectGuessLeft + ' lives left.');
-  result();
-}
-
-
 
 function result() {
   if (remainingLetters == 0 && incorrectGuessLeft > 0) {
@@ -128,14 +107,14 @@ function newGame() {
   context.moveTo(200, 0);
   context.lineTo(30, 0);
   context.moveTo(200, 0);
-  context.stroke();
+context.stroke();
   //*** other parts of the hang**//
   setDesignPalette();
   context.moveTo(30, 0);
   context.lineTo(30, 450);
   context.lineTo(350, 450);
   context.moveTo(30, 0);
-  context.stroke();
+context.stroke();
 
 welcomeMessage();
 word = setAnswerWord();
@@ -144,6 +123,8 @@ incorrectGuessLeft = 6;
 hangManBodyParts = 0;
 remainingLetters = word.length;
 
+
+document.getElementById('playButton').style.visibility = 'visible';
 //x = document.getElementById('display-chosen-alpha').textContent;
 document.getElementById('gameOverMessage').textContent = '';
 document.getElementById('playButton').style.visibility = 'visible';
@@ -151,30 +132,30 @@ document.getElementById('playButton').style.visibility = 'visible';
 document.getElementById('display-chosen-alpha').textContent = '';
 }
 
-
-function chooseChar(){
-   //var displayChosenAlpha = document.getElementById('display-chosen-alpha');
-  //displayChosenAlpha.textContent =
-   //var chosenAlpha = document.getElementsByClassName('char-btn')[0].id
- //alert(chosenAlpha);
-//alert()
-
-//alert(chosenAlpha.length);
-//getIndexNum();
-function getIndexNum(){
-  var chosenAlpha = document.getElementsByClassName('char-btn');
-  for (var i = 0; i < chosenAlpha.length; i++)
-  {
-      (function(index){
-          chosenAlpha[i].onclick = function(){
-            //alert(index);
-            return index;
-
-          }
-      })(i);
-  }
-}
-alert(getIndexNum());
+//
+// function chooseChar(){
+//    //var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+//   //displayChosenAlpha.textContent =
+//    //var chosenAlpha = document.getElementsByClassName('char-btn')[0].id
+//  //alert(chosenAlpha);
+// //alert()
+//
+// //alert(chosenAlpha.length);
+// //getIndexNum();
+// function getIndexNum(){
+//   var chosenAlpha = document.getElementsByClassName('char-btn');
+//   for (var i = 0; i < chosenAlpha.length; i++)
+//   {
+//       (function(index){
+//           chosenAlpha[i].onclick = function(){
+//             //alert(index);
+//             return index;
+//
+//           }
+//       })(i);
+//   }
+// }
+// alert(getIndexNum());
 
 // var chosenAlpha = document.getElementsByClassName('char-btn')[getIndexNum()].id
 // alert(chosenAlpha);
@@ -199,29 +180,28 @@ alert(getIndexNum());
 //   alert($(this).attr('id'));
 // });
 
+//}
 
+
+
+
+function chooseCharB(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'b';
+  //alert(document.querySelector('.char-btn').id)
 }
 
+function chooseCharC(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'c';
+}
 
+function chooseCharD(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'd';
+}
 
-
-// function chooseCharB(){
-//   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
-//   displayChosenAlpha.textContent = 'b';
-//   //alert(document.querySelector('.char-btn').id)
-// }
-//
-// function chooseCharC(){
-//   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
-//   displayChosenAlpha.textContent = 'c';
-// }
-//
-// function chooseCharD(){
-//   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
-//   displayChosenAlpha.textContent = 'd';
-// }
-//
-// function chooseCharE(){
-//   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
-//   displayChosenAlpha.textContent = 'e';
-// }
+function chooseCharE(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'e';
+}
