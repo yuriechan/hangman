@@ -153,10 +153,35 @@ document.getElementById('display-chosen-alpha').textContent = '';
 
 
 function chooseChar(){
-   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
-  displayChosenAlpha.textContent
-//   var chosenAlpha = document.getElementsByClassName('.char-btn').id
+   //var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  //displayChosenAlpha.textContent =
+   //var chosenAlpha = document.getElementsByClassName('char-btn')[0].id
+ //alert(chosenAlpha);
+//alert()
+
+//alert(chosenAlpha.length);
+//getIndexNum();
+function getIndexNum(){
+  var chosenAlpha = document.getElementsByClassName('char-btn');
+  for (var i = 0; i < chosenAlpha.length; i++)
+  {
+      (function(index){
+          chosenAlpha[i].onclick = function(){
+            //alert(index);
+            return index;
+
+          }
+      })(i);
+  }
+}
+alert(getIndexNum());
+
+// var chosenAlpha = document.getElementsByClassName('char-btn')[getIndexNum()].id
 // alert(chosenAlpha);
+
+
+
+
   // var displayChosenAlpha = document.getElementById('display-chosen-alpha').textContent;
   // var idForAlpha = document.querySelector(.char)
   //alert(displayChosenAlpha.id)
@@ -170,9 +195,9 @@ function chooseChar(){
 //   var test = $('.char-btn').click(function(){$(this).text})
 // }
 //
-$('.char-btn').each(function() {
-  alert($(this).attr('id'));
-});
+// $('.char-btn').each(function() {
+//   alert($(this).attr('id'));
+// });
 
 
 }
