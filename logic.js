@@ -134,6 +134,46 @@ deleteRed();
 document.getElementById('display-chosen-alpha').textContent = '';
 }
 
+function getIndexNum(){
+  var chosenAlpha = document.getElementsByClassName('char-btn');
+  for (var i = 0; i < chosenAlpha.length; i++)
+  {
+      (function(index){
+          chosenAlpha[i].onclick = function(){
+            //alert(index);
+            return index;
+
+          }
+      })(i);
+  }
+}
+alert(getIndexNum());
+
+// var chosenAlpha = document.getElementsByClassName('char-btn')[getIndexNum()].id
+// alert(chosenAlpha);
+
+
+
+
+  // var displayChosenAlpha = document.getElementById('display-chosen-alpha').textContent;
+  // var idForAlpha = document.querySelector(.char)
+  //alert(displayChosenAlpha.id)
+  //alert(document.querySelector('.char-btn').id)
+
+//
+// alert($(document).ready(function(){
+// $('.char-btn').click(function(){
+// $(this).text()});});)
+// function(){
+//   var test = $('.char-btn').click(function(){$(this).text})
+// }
+//
+// $('.char-btn').each(function() {
+//   alert($(this).attr('id'));
+// });
+
+
+
 function chooseCharA(){
   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
   displayChosenAlpha.textContent = 'a';
