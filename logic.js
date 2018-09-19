@@ -27,17 +27,14 @@ var playerArr = initPlayerArr(word);
 var incorrectGuessLeft = 6;
 var hangManBodyParts = 0;
 var remainingLetters = word.length;
-var userInput = '';
-var input = '';
+// var userInput = '';
+// var input = '';
 
 playing();
 function playing() {
   var userInput = '';
   var input = '';
-  userInput = document.getElementById('user-input').value;
-
-function playing() {
-
+//userInput = document.getElementById('user-input').value;
 userInput = document.getElementById('display-chosen-alpha').textContent;
 document.getElementById(userInput).style.backgroundColor = 'red';
 
@@ -123,72 +120,28 @@ incorrectGuessLeft = 6;
 hangManBodyParts = 0;
 remainingLetters = word.length;
 
-
 document.getElementById('playButton').style.visibility = 'visible';
-//x = document.getElementById('display-chosen-alpha').textContent;
 document.getElementById('gameOverMessage').textContent = '';
 document.getElementById('playButton').style.visibility = 'visible';
-//document.getElementsByClassName('char-btn').style.backgroundColor = '';
+deleteRed();
+      function deleteRed(){
+        var classElement = document.getElementsByClassName('char-btn');
+        for (i = 0; i < classElement.length; i++)
+        {
+            classElement[i].style.backgroundColor = '';
+        }
+      }
 document.getElementById('display-chosen-alpha').textContent = '';
 }
 
-//
-// function chooseChar(){
-//    //var displayChosenAlpha = document.getElementById('display-chosen-alpha');
-//   //displayChosenAlpha.textContent =
-//    //var chosenAlpha = document.getElementsByClassName('char-btn')[0].id
-//  //alert(chosenAlpha);
-// //alert()
-//
-// //alert(chosenAlpha.length);
-// //getIndexNum();
-// function getIndexNum(){
-//   var chosenAlpha = document.getElementsByClassName('char-btn');
-//   for (var i = 0; i < chosenAlpha.length; i++)
-//   {
-//       (function(index){
-//           chosenAlpha[i].onclick = function(){
-//             //alert(index);
-//             return index;
-//
-//           }
-//       })(i);
-//   }
-// }
-// alert(getIndexNum());
-
-// var chosenAlpha = document.getElementsByClassName('char-btn')[getIndexNum()].id
-// alert(chosenAlpha);
-
-
-
-
-  // var displayChosenAlpha = document.getElementById('display-chosen-alpha').textContent;
-  // var idForAlpha = document.querySelector(.char)
-  //alert(displayChosenAlpha.id)
-  //alert(document.querySelector('.char-btn').id)
-
-//
-// alert($(document).ready(function(){
-// $('.char-btn').click(function(){
-// $(this).text()});});)
-// function(){
-//   var test = $('.char-btn').click(function(){$(this).text})
-// }
-//
-// $('.char-btn').each(function() {
-//   alert($(this).attr('id'));
-// });
-
-//}
-
-
-
+function chooseCharA(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'a';
+}
 
 function chooseCharB(){
   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
   displayChosenAlpha.textContent = 'b';
-  //alert(document.querySelector('.char-btn').id)
 }
 
 function chooseCharC(){
@@ -204,4 +157,100 @@ function chooseCharD(){
 function chooseCharE(){
   var displayChosenAlpha = document.getElementById('display-chosen-alpha');
   displayChosenAlpha.textContent = 'e';
+}
+
+function chooseCharF(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'f';
+}
+
+function chooseCharG(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'g';
+}
+
+function chooseCharH(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'h';
+}
+
+function chooseCharI(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'i';
+}
+
+function chooseCharJ(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'j';
+}
+
+function chooseCharK(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'k';
+}
+
+function chooseCharL(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'l';
+}
+
+function chooseCharM(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'm';
+}
+
+function chooseCharN(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'n';
+}
+
+function chooseCharO(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'o';
+}
+function chooseCharP(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'p';
+}
+function chooseCharQ(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'q';
+}
+function chooseCharR(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'r';
+}
+function chooseCharS(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 's';
+}
+function chooseCharT(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 't';
+}
+function chooseCharU(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'u';
+}
+
+function chooseCharV(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'v';
+}
+function chooseCharW(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'w';
+}
+
+function chooseCharX(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'x';
+}
+function chooseCharY(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'y';
+}
+function chooseCharZ(){
+  var displayChosenAlpha = document.getElementById('display-chosen-alpha');
+  displayChosenAlpha.textContent = 'z';
 }
