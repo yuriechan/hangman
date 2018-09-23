@@ -8,42 +8,44 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <link rel="stylesheet" href="stylesheet.css">
 </head>
-
 <body>
+  <h1 id = 'welcomeMessage'></h1>
+  <h2 id = 'messageToUser'></h2>
   <br>
-Chosen Character:<h2 id = 'display-chosen-alpha'></h2>
+Chosen Character:<h3 id = 'display-chosen-alpha'></h3>
     <button type = 'button' onclick = 'playing()' id = 'playButton'>Guess!</button>
-    <button type = 'button' onclick = 'newGame()'>Reset</button>
+    <button type = 'button' onclick = 'newGame()'>Reset</button>``
     <br>
     <div class = 'char-btn-all'>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharA()' id = 'a'>a</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharB()' id = 'b'>b</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharC()' id = 'c'>c</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharD()' id = 'd'>d</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharE()' id = 'e'>e</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharF()' id = 'f'>f</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharG()' id = 'g'>g</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharH()' id = 'h'>h</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharI()' id = 'i'>i</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharJ()' id = 'j'>j</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharK()' id = 'k'>k</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharL()' id = 'l'>l</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharM()' id = 'm'>m</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharN()' id = 'n'>n</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharO()' id = 'o'>o</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharP()' id = 'p'>p</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharQ()' id = 'q'>q</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharR()' id = 'r'>r</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharS()' id = 's'>s</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharT()' id = 't'>t</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharU()' id = 'u'>u</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharV()' id = 'v'>v</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharW()' id = 'w'>w</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharX()' id = 'x'>x</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharY()' id = 'y'>y</button>
-    <button class = 'char-btn' type = 'button' onclick = 'chooseCharZ()' id = 'z'>z</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'a' id = 'a'>a</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'b' id = 'b'>b</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'c' id = 'c'>c</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'd' id = 'd'>d</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'e' id = 'e'>e</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'f' id = 'f'>f</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'g' id = 'g'>g</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'h' id = 'h'>h</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'i' id = 'i'>i</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'j' id = 'j'>j</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'k' id = 'k'>k</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'l' id = 'l'>l</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'm' id = 'm'>m</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'n' id = 'n'>n</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'o' id = 'o'>o</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'p' id = 'p'>p</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'q' id = 'q'>q</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'r' id = 'r'>r</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 's' id = 's'>s</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 't' id = 't'>t</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'u' id = 'u'>u</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'v' id = 'v'>v</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'w' id = 'w'>w</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'x' id = 'x'>x</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'y' id = 'y'>y</button>
+    <button class = 'char-btn' type = 'button' onclick = 'chooseChar(this.value)' value = 'z' id = 'z'>z</button>
     </div>
     <br>
     <p id = 'gameOverMessage'></p>
+
 </body>
 </html>
